@@ -1,0 +1,87 @@
+/* CSS VARIABLES DE COLORES */
+:root {
+    --primary: #00c3ff;
+    --secundary: #09549b;
+}
+/* BG */
+.bg-primary{
+    background-color: var(--primary);
+}
+.bg-secundary{
+    background-color: var(--secundary);
+}
+.bg-logo{
+    background-image:url('img/bgheader.png');
+    background-size: 380px auto;
+}
+/* TEXT */
+.text-primary{
+    color: var(--primary);
+}
+.text-secundary{
+    color: var(--secundary);
+}
+/* BORDER */
+.border-primary{
+    border-color: var(--primary);
+}
+.border-secundary{
+    border-color: var(--secundary);
+}
+
+
+/* CSS SCROLL GENERAL */
+* {
+    scroll-behavior: smooth;
+}
+body::-webkit-scrollbar {
+    width: 1px;
+}
+@media only screen and (max-width: 768px) {
+body::-webkit-scrollbar {
+    width: 0px;
+}
+}
+body::-webkit-scrollbar-track {
+    background: var(--primary);
+}
+body::-webkit-scrollbar-thumb {
+    background: var(--secundary);
+}
+
+/* CSS SCROLL CATEGORIAS */
+.scrolld::-webkit-scrollbar {
+    width: 0px;
+}
+.scrolld::-webkit-scrollbar-track {
+    background: var(--primary);
+}
+.scrolld::-webkit-scrollbar-thumb {
+    background: var(--secundary);
+}
+html{
+    background-color: rgb(255, 255, 255);
+    /* overflow-x:hidden;
+    overflow-y:hidden; */
+}
+
+.special-bg:hover {
+    background-color: var(--secundary);
+    -webkit-transition: background-color 200ms linear;
+    -ms-transition: background-color 200ms linear;
+    transition: background-color 200ms linear;
+}
+
+/* FONTS */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@0,700;1,700&display=swap');
+
+.poppins {
+    font-family: 'Poppins', sans-serif; 
+}
+.sspro {
+    font-family: 'Source Sans Pro', sans-serif;
+}
+ul li a {
+    font-family: 'Poppins', sans-serif;
+}
