@@ -56,6 +56,13 @@ var mstep        =   1;
 const moptionDoors1  =   '<option selected value="0" disabled>Choose an option</option><option value="2 doors">2 doors</option><option value="4 doors">4 doors</option>';
 const moptionDoors2  =   '<option selected value="0" disabled>Choose an option</option><option value="2 doors regular cab">2 doors regular cab</option><option value="2 doors extended cab">2 doors extended cab</option><option value="4 doors crew cab">4 doors crew cab</option><option value="4 doors extended crew cab">4 doors extended crew cab</option>';
 
+const messages  =   {
+    "empty":"You must fill in all the fields.",
+    "noyear":"You must choose a correct vehicle date.",
+    "email":"Please enter a valid email.",
+    "phone":"Please enter a valid phone number."
+};
+
 window.addEventListener('load', function() {
     //
 });
@@ -95,6 +102,14 @@ function mnext_step(e) {
             alert(messages.empty);
             return;
         }
+        if(!validateEmail(minput2[1].value)) {
+            alert(messages.email);
+            return;
+        }
+        if(!validatePhone(minput2[2].value)) {
+            alert(messages.phone);
+            return;
+        }
         document.getElementById('mform_contact').submit();
     }
     else
@@ -103,8 +118,10 @@ function mnext_step(e) {
 function mback_step() {
     if(mstep != 2)
         return;
-    if(misRockChip) 
-        document.getElementById('mgoBackBtn').classList.remove('hidden');
+    if(misRockChip) {
+        minput1[6].value = 0;
+        misRockChip = false;
+    }
     mButtons[1].classList.add('hidden');
     msteps[1].classList.add('hidden');
     mButtons[0].classList.remove('hidden');
@@ -114,26 +131,20 @@ function mback_step() {
 
 function mdetectService(e) {
     const value     =   e.value;
-    if(misRockChip && value != "Rock Chip Repairs") {
-        mback_step();
-        misRockChip = false;
+    if(value == "Door Glass Replacement" || value == "Back Glass Replacement" || value == "Vent Glass Replacement") {
+        //maddClass(mcontainerService, mclassInputLeft);
+        mcontainerDescripcion.classList.remove('hidden');
+        mshowDescrip = true;
     }
     else {
-        if(value == "Door Glass Replacement" || value == "Back Glass Replacement" || value == "Vent Glass Replacement") {
-            //maddClass(mcontainerService, mclassInputLeft);
-            mcontainerDescripcion.classList.remove('hidden');
-            mshowDescrip = true;
+        if(value == "Rock Chip Repairs") {
+            misRockChip = true;
+            mnext_step(1);
         }
-        else {
-            if(value == "Rock Chip Repairs") {
-                misRockChip = true;
-                mnext_step(1);
-            }
-            if(mshowDescrip) {
-                //mremoveClass(mcontainerService, mclassInputLeft);
-                mcontainerDescripcion.classList.add('hidden');
-                mshowDescrip = false;
-            }
+        if(mshowDescrip) {
+            //mremoveClass(mcontainerService, mclassInputLeft);
+            mcontainerDescripcion.classList.add('hidden');
+            mshowDescrip = false;
         }
     }
 }
@@ -213,3 +224,18 @@ function mdetectEmptyStep2() {
     }
     return error;
 }
+
+function validatePhone(phone) {
+    var phoneno = /^\(?([0-9]{3})\)?[-. ]?([0-9]{3})[-. ]?([0-9]{4})$/;
+    if(phone.match(phoneno)) 
+        return true;
+    else 
+        return false;
+}
+
+const validateEmail = (email) => {
+    return email.match(
+        /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
+    );
+};
+  
