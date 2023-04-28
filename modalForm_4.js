@@ -72,8 +72,6 @@ function mnext_step(e) {
                 return;
             }
         }
-        else
-            document.getElementById('mgoBackBtn').classList.add('hidden');
 
         mButtons[0].classList.add('hidden');
         msteps[0].classList.add('hidden');
@@ -122,7 +120,7 @@ function mdetectService(e) {
     }
     else {
         if(value == "Door Glass Replacement" || value == "Back Glass Replacement" || value == "Vent Glass Replacement") {
-            maddClass(mcontainerService, mclassInputLeft);
+            //maddClass(mcontainerService, mclassInputLeft);
             mcontainerDescripcion.classList.remove('hidden');
             mshowDescrip = true;
         }
@@ -132,7 +130,7 @@ function mdetectService(e) {
                 mnext_step(1);
             }
             if(mshowDescrip) {
-                mremoveClass(mcontainerService, mclassInputLeft);
+                //mremoveClass(mcontainerService, mclassInputLeft);
                 mcontainerDescripcion.classList.add('hidden');
                 mshowDescrip = false;
             }
@@ -144,13 +142,13 @@ function mdetectYear(e) {
     var value     =   e.value;
     value = value.replace(/[^\d,]/g,''); // remove any char
     if(value >= 2010) {
-        maddClass(mcontainerYear, mclassInputLeft);
+        //maddClass(mcontainerYear, mclassInputLeft);
         mcontainerVin.classList.remove('hidden');
         mshowVin = true;
     }
     if(value < 2010) {
         if(mshowVin) {
-            mremoveClass(mcontainerYear, mclassInputLeft);
+            //mremoveClass(mcontainerYear, mclassInputLeft);
             mcontainerVin.classList.add('hidden');
             mshowVin = false;
         }
@@ -160,7 +158,7 @@ function mdetectYear(e) {
 function mdetectDoors(e) {
     const value     =   e.value;
     if(value == "Sedan" || value == "Wagon" || value == "Hatchaback" || value == "Pick Up") {
-        maddClass(mcontainerStyle, mclassInputLeft);
+        //maddClass(mcontainerStyle, mclassInputLeft);
         mcontainerDoor.classList.remove('hidden');
         if(value != "Pick Up")
             minput1[5].innerHTML   =   moptionDoors1;
@@ -170,7 +168,7 @@ function mdetectDoors(e) {
     }
     else {
         if(mshowDoors) {
-            mremoveClass(mcontainerStyle, mclassInputLeft);
+            //mremoveClass(mcontainerStyle, mclassInputLeft);
             mcontainerDoor.classList.add('hidden');
             mshowDoors = false;
         }

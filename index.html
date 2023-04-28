@@ -29,31 +29,32 @@
                 <p class="text-center text-xs text-slate-800 font-normal">We aim to respond in less than 24 hours, (during our regular business days). Please provide us with all the required information.</p>
                 <div class="mt-8">
                     <form action="#" method="POST" id="mform_contact">
-                        <div class="mb-8">
-                            <div class="relative w-[100%]" id="mform_container_service" data-aos="fade-right">
-                                <select name="servicio" id="mservice" onchange="mdetectService(this)" class="block px-2.5 pb-5 pt-4 w-full text-sm text-gray-900 bg-transparent rounded-lg border-1 border-gray-300 appearance-none focus:outline-none focus:ring-0 focus:border-blue-600 peer">
-                                    <option selected value="0" disabled>Choose an option</option>
-                                    <option value="Windshield Replacement">Windshield Replacement</option>
-                                    <option value="Door Glass Replacement">Door Glass Replacement</option>
-                                    <option value="Back Glass Replacement">Back Glass Replacement</option>
-                                    <option value="Quarter Glass Replacement">Quarter Glass Replacement</option>
-                                    <option value="Vent Glass Replacement">Vent Glass Replacement</option>
-                                    <option value="Sunroof Replacement">Sunroof Replacement</option>
-                                    <option value="Rock Chip Repairs">Rock Chip Repairs</option>
-                                    <option value="Fleet Maintenance Services">Fleet Maintenance Services</option>
-                                </select>
-                                <label class="absolute text-sm font-bold text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-0 top-0 z-10 origin-[0] px-2 peer-focus:px-2 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:-translate-y-0 peer-placeholder-shown:top-0 peer-focus:top-0 peer-focus:-translate-y-0 left-0">
-                                    SERVICE *
-                                </label>
+                        <div id="mform_step_1"> 
+                            <div class="mb-8">
+                                <div class="relative w-[100%]" id="mform_container_service" data-aos="fade-right">
+                                    <select name="servicio" id="mservice" onchange="mdetectService(this)" class="block px-2.5 pb-5 pt-4 w-full text-sm text-gray-900 bg-transparent rounded-lg border-1 border-gray-300 appearance-none focus:outline-none focus:ring-0 focus:border-blue-600 peer">
+                                        <option selected value="0" disabled>Choose an option</option>
+                                        <option value="Windshield Replacement">Windshield Replacement</option>
+                                        <option value="Door Glass Replacement">Door Glass Replacement</option>
+                                        <option value="Back Glass Replacement">Back Glass Replacement</option>
+                                        <option value="Quarter Glass Replacement">Quarter Glass Replacement</option>
+                                        <option value="Vent Glass Replacement">Vent Glass Replacement</option>
+                                        <option value="Sunroof Replacement">Sunroof Replacement</option>
+                                        <option value="Rock Chip Repairs">Rock Chip Repairs</option>
+                                        <option value="Fleet Maintenance Services">Fleet Maintenance Services</option>
+                                    </select>
+                                    <label class="absolute text-sm font-bold text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-0 top-0 z-10 origin-[0] px-2 peer-focus:px-2 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:-translate-y-0 peer-placeholder-shown:top-0 peer-focus:top-0 peer-focus:-translate-y-0 left-0">
+                                        SERVICE *
+                                    </label>
+                                </div>
+                                <div class="relative w-[100%] mt-2 hidden" id="mform_container_descripcion" data-aos="fade-right">
+                                    <input type="text" name="serviceDescripcion" id="mdescripcion" class="block px-2.5 pb-5 pt-4 w-full text-sm text-gray-900 bg-transparent rounded-lg border-1 border-gray-300 appearance-none focus:outline-none focus:ring-0 focus:border-blue-600 peer" placeholder=" ">
+                                    <label class="absolute text-sm font-bold text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-0 top-0 z-10 origin-[0] px-2 peer-focus:px-2 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:-translate-y-0 peer-placeholder-shown:top-0 peer-focus:top-0 peer-focus:-translate-y-0 left-0">
+                                        WHICH GLASSES ARE BROKEN? *
+                                    </label>
+                                </div>
                             </div>
-                            <div class="relative w-[100%] md:w-10/12 lg:w-6/12 mt-2 hidden" id="mform_container_descripcion" data-aos="fade-right">
-                                <input type="text" name="serviceDescripcion" id="mdescripcion" class="block px-2.5 pb-5 pt-4 w-full text-sm text-gray-900 bg-transparent rounded-lg border-1 border-gray-300 appearance-none focus:outline-none focus:ring-0 focus:border-blue-600 peer" placeholder=" ">
-                                <label class="absolute text-sm font-bold text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-0 top-0 z-10 origin-[0] px-2 peer-focus:px-2 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:-translate-y-0 peer-placeholder-shown:top-0 peer-focus:top-0 peer-focus:-translate-y-0 left-0">
-                                    WHICH GLASSES ARE BROKEN? *
-                                </label>
-                            </div>
-                        </div>
-                        <div id="mform_step_1">                                    
+                                                           
                             <div id="mform_container_year_vin">
                                 <div class="relative w-[100%]" data-aos="fade-right" id="mform_container_year">
                                     <input type="number" name="year" id="myear" onkeyup="mdetectYear(this)" class="block px-2.5 pb-5 pt-4 w-full text-sm text-gray-900 bg-transparent rounded-lg border-1 border-gray-300 appearance-none focus:outline-none focus:ring-0 focus:border-blue-600 peer" required>
@@ -61,7 +62,7 @@
                                         YEAR*
                                     </label>
                                 </div>
-                                <div class="relative w-[100%] md:w-10/12 lg:w-6/12 hidden" data-aos="fade-right" id="mform_container_vin">
+                                <div class="relative w-[100%] mt-2 hidden" data-aos="fade-right" id="mform_container_vin">
                                     <input type="text" name="vin" id="mvin" class="block px-2.5 pb-5 pt-4 w-full text-sm text-gray-900 bg-transparent rounded-lg border-1 border-gray-300 appearance-none focus:outline-none focus:ring-0 focus:border-blue-600 peer" placeholder=" ">
                                     <label class="absolute text-sm font-bold text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-0 top-0 z-10 origin-[0] px-2 peer-focus:px-2 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:-translate-y-0 peer-placeholder-shown:top-0 peer-focus:top-0 peer-focus:-translate-y-0 left-0">
                                         VIN (optional)
@@ -69,13 +70,13 @@
                                 </div>
                             </div>
                             <div>
-                                <div class="relative w-[100%] md:w-10/12 lg:w-6/12 mr-2 mt-2" data-aos="fade-right">
+                                <div class="relative w-[100%] mr-2 mt-2" data-aos="fade-right">
                                     <input type="text" name="mark" id="mmarca" class="block px-2.5 pb-5 pt-4 w-full text-sm text-gray-900 bg-transparent rounded-lg border-1 border-gray-300 appearance-none focus:outline-none focus:ring-0 focus:border-blue-600 peer" placeholder=" ">
                                     <label class="absolute text-sm font-bold text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-0 top-0 z-10 origin-[0] px-2 peer-focus:px-2 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:-translate-y-0 peer-placeholder-shown:top-0 peer-focus:top-0 peer-focus:-translate-y-0 left-0">
-                                        MARK *
+                                        MAKE *
                                     </label>
                                 </div>
-                                <div class="relative w-[100%] md:w-10/12 lg:w-6/12 mt-2" data-aos="fade-right">
+                                <div class="relative w-[100%] mt-2" data-aos="fade-right">
                                     <input type="text" name="model" id="mmodelo" class="block px-2.5 pb-5 pt-4 w-full text-sm text-gray-900 bg-transparent rounded-lg border-1 border-gray-300 appearance-none focus:outline-none focus:ring-0 focus:border-blue-600 peer" placeholder=" ">
                                     <label class="absolute text-sm font-bold text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-0 top-0 z-10 origin-[0] px-2 peer-focus:px-2 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:-translate-y-0 peer-placeholder-shown:top-0 peer-focus:top-0 peer-focus:-translate-y-0 left-0">
                                         MODEL *
@@ -95,10 +96,10 @@
                                         <option value="Pick Up">Pick Up</option>
                                     </select>
                                     <label for="3" class="absolute text-sm font-bold text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-0 top-0 z-10 origin-[0] px-2 peer-focus:px-2 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:-translate-y-0 peer-placeholder-shown:top-0 peer-focus:top-0 peer-focus:-translate-y-0 left-0">
-                                        STYLE *
+                                        BODY STYLE *
                                     </label>
                                 </div>
-                                <div class="relative w-[100%] md:w-10/12 lg:w-6/12 mt-2 hidden" data-aos="fade-right" id="mform_container_vehicle_door">
+                                <div class="relative w-[100%] mt-2 hidden" data-aos="fade-right" id="mform_container_vehicle_door">
                                     <select name="doorVehicle" id="mvehicle_door" class="block px-2.5 pb-5 pt-4 w-full text-sm text-gray-900 bg-transparent rounded-lg border-1 border-gray-300 appearance-none focus:outline-none focus:ring-0 focus:border-blue-600 peer">
                                         <!-- form.js -->
                                     </select>
@@ -110,13 +111,13 @@
                         </div>
                         <div id="mform_step_2" class="hidden">
                             <div>
-                                <div class="relative w-[100%] md:w-10/12 lg:w-6/12 mr-2" data-aos="fade-right">
+                                <div class="relative w-[100%] mr-2" data-aos="fade-right">
                                     <input type="text" name="name" id="mname" class="block px-2.5 pb-5 pt-4 w-full text-sm text-gray-900 bg-transparent rounded-lg border-1 border-gray-300 appearance-none focus:outline-none focus:ring-0 focus:border-blue-600 peer" placeholder=" ">
                                     <label class="absolute text-sm font-bold text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-0 top-0 z-10 origin-[0] px-2 peer-focus:px-2 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:-translate-y-0 peer-placeholder-shown:top-0 peer-focus:top-0 peer-focus:-translate-y-0 left-0">
                                         FULL NAME*
                                     </label>
                                 </div>
-                                <div class="relative w-[100%] md:w-10/12 lg:w-6/12 mt-2" data-aos="fade-right">
+                                <div class="relative w-[100%] mt-2" data-aos="fade-right">
                                     <input type="text" name="email" id="memail" class="block px-2.5 pb-5 pt-4 w-full text-sm text-gray-900 bg-transparent rounded-lg border-1 border-gray-300 appearance-none focus:outline-none focus:ring-0 focus:border-blue-600 peer" placeholder=" ">
                                     <label class="absolute text-sm font-bold text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-0 top-0 z-10 origin-[0] px-2 peer-focus:px-2 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:-translate-y-0 peer-placeholder-shown:top-0 peer-focus:top-0 peer-focus:-translate-y-0 left-0">
                                         EMAIL*
@@ -124,13 +125,13 @@
                                 </div>
                             </div>
                             <div>
-                                <div class="relative w-[100%] md:w-10/12 lg:w-6/12 mr-2 mt-2" data-aos="fade-right">
+                                <div class="relative w-[100%] mr-2 mt-2" data-aos="fade-right">
                                     <input type="text" name="phone" id="mphone" class="block px-2.5 pb-5 pt-4 w-full text-sm text-gray-900 bg-transparent rounded-lg border-1 border-gray-300 appearance-none focus:outline-none focus:ring-0 focus:border-blue-600 peer" placeholder=" ">
                                     <label class="absolute text-sm font-bold text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-0 top-0 z-10 origin-[0] px-2 peer-focus:px-2 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:-translate-y-0 peer-placeholder-shown:top-0 peer-focus:top-0 peer-focus:-translate-y-0 left-0">
                                         PHONE *
                                     </label>
                                 </div>
-                                <div class="relative w-[100%] md:w-10/12 lg:w-6/12 mt-2" data-aos="fade-right">
+                                <div class="relative w-[100%] mt-2" data-aos="fade-right">
                                     <input type="text" name="zip" id="mzip" class="block px-2.5 pb-5 pt-4 w-full text-sm text-gray-900 bg-transparent rounded-lg border-1 border-gray-300 appearance-none focus:outline-none focus:ring-0 focus:border-blue-600 peer" placeholder=" ">
                                     <label class="absolute text-sm font-bold text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-0 top-0 z-10 origin-[0] px-2 peer-focus:px-2 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:-translate-y-0 peer-placeholder-shown:top-0 peer-focus:top-0 peer-focus:-translate-y-0 left-0">
                                         ZIP *
@@ -160,6 +161,6 @@
         </div>
         
     </div>
-    <script src="./modalForm_3.js"></script>
+    <script src="./modalForm_4.js"></script>
 </body>
 </html>
