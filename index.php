@@ -19,8 +19,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@0,700;1,700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <div class="px-6 py-6 lg:px-8">
-
+    <div <?php if(!isset($_GET['isFromWeb'])) { echo 'class="px-6 py-6 lg:px-8"'; } ?>>
         <div class="relative w-full mx-auto flex justify-center items-center">
             <div class="relative p-5 w-[100%]">
                 <div <?php if(isset($_GET['isFromWeb'])) { echo "style='display:none;'"; } ?>>
