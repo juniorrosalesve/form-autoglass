@@ -23,12 +23,12 @@
 
         <div class="relative w-full mx-auto flex justify-center items-center">
             <div class="relative p-5 w-[100%]">
-                <?php if(!isset($_GET['isFromWeb'])) { ?>
+                <div <?php if(!isset($_GET['isFromWeb'])) { echo "class='hidden'"; } ?>>
                     <center>
                     <img src="./logo.png" alt="logo">
                     </center>
                     <p class="text-center text-xs text-slate-800 font-normal" id="input_span_respondtime">We aim to respond in less than 24 hours, (during our regular business days). Please provide us with all the required information.</p>
-                <?php } ?>
+                </div>
                 <div class="mt-8">
                     <!-- https://app.eautoglassmobile.com/new-request -->
                     <form action="https://app.eautoglassmobile.com/new-request" method="POST" enctype="multipart/form-data" id="mform_contact">
@@ -194,14 +194,6 @@
                 vinInput.value = null;
                 vinPhoto.value = null;
                 isVinPhoto = false;
-            }
-        }
-
-        function inIframe () {
-            try {
-                return window.self !== window.top;
-            } catch (e) {
-                return true;
             }
         }
     </script>
