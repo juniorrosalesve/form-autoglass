@@ -23,12 +23,12 @@
 
         <div class="relative w-full mx-auto flex justify-center items-center">
             <div class="relative p-5 w-[100%]">
-                <div id="hiddenOnIframe">
+                <?php if(!isset($_GET['isFromWeb'])) { ?>
                     <center>
-                        <img src="./logo.png" alt="logo">
+                    <img src="./logo.png" alt="logo">
                     </center>
                     <p class="text-center text-xs text-slate-800 font-normal" id="input_span_respondtime">We aim to respond in less than 24 hours, (during our regular business days). Please provide us with all the required information.</p>
-                </div>
+                <?php } ?>
                 <div class="mt-8">
                     <!-- https://app.eautoglassmobile.com/new-request -->
                     <form action="https://app.eautoglassmobile.com/new-request" method="POST" enctype="multipart/form-data" id="mform_contact">
@@ -197,14 +197,9 @@
             }
         }
 
-        window.addEventListener("load", (event) => {
-            inIframe();
-        });
-
         function inIframe () {
             try {
-                const iframe    =   document.getElementById('hiddenOnIframe');
-                iframe.style.display    =   "none";
+                return window.self !== window.top;
             } catch (e) {
                 return true;
             }
