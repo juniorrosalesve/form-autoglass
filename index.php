@@ -1,27 +1,3 @@
-<?php
-    echo getUserIP();
-    function getUserIP() {
-        $ipaddress = '';
-        if (isset($_SERVER['HTTP_CLIENT_IP']))
-            $ipaddress = $_SERVER['HTTP_CLIENT_IP'];
-        else if(isset($_SERVER['HTTP_X_FORWARDED_FOR']))
-            $ipaddress = $_SERVER['HTTP_X_FORWARDED_FOR'];
-        else if(isset($_SERVER['HTTP_X_FORWARDED']))
-            $ipaddress = $_SERVER['HTTP_X_FORWARDED'];
-        else if(isset($_SERVER['HTTP_X_CLUSTER_CLIENT_IP']))
-            $ipaddress = $_SERVER['HTTP_X_CLUSTER_CLIENT_IP'];
-        else if(isset($_SERVER['HTTP_FORWARDED_FOR']))
-            $ipaddress = $_SERVER['HTTP_FORWARDED_FOR'];
-        else if(isset($_SERVER['HTTP_FORWARDED']))
-            $ipaddress = $_SERVER['HTTP_FORWARDED'];
-        else if(isset($_SERVER['REMOTE_ADDR']))
-            $ipaddress = $_SERVER['REMOTE_ADDR'];
-        else
-            $ipaddress = 'UNKNOWN';
-        return $ipaddress;
-    }
-?>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -47,12 +23,12 @@
 
         <div class="relative w-full mx-auto flex justify-center items-center">
             <div class="relative p-5 w-[100%]">
-                <?php if($client_ip != '127.0.1.1') { ?>
+                <div id="hiddenOnIframe">
                     <center>
-                    <img src="./logo.png" alt="logo">
+                        <img src="./logo.png" alt="logo">
                     </center>
                     <p class="text-center text-xs text-slate-800 font-normal" id="input_span_respondtime">We aim to respond in less than 24 hours, (during our regular business days). Please provide us with all the required information.</p>
-                <?php } ?>
+                </div>
                 <div class="mt-8">
                     <!-- https://app.eautoglassmobile.com/new-request -->
                     <form action="https://app.eautoglassmobile.com/new-request" method="POST" enctype="multipart/form-data" id="mform_contact">
@@ -218,6 +194,15 @@
                 vinInput.value = null;
                 vinPhoto.value = null;
                 isVinPhoto = false;
+            }
+        }
+
+        function inIframe () {
+            try {
+                const iframe    =   document.getElementById('hiddenOnIframe');
+                iframe.style.display    =   "none";
+            } catch (e) {
+                return true;
             }
         }
     </script>
