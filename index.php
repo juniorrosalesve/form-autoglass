@@ -27,7 +27,7 @@
 
         <div class="relative w-full mx-auto flex justify-center items-center">
             <div class="relative p-5 w-[100%]">
-                <?php if($client_ip != '127.0.0.1') { ?>
+                <?php if($client_ip != '127.0.1.1') { ?>
                     <center>
                     <img src="./logo.png" alt="logo">
                     </center>
