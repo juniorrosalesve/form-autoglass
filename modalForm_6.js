@@ -63,6 +63,8 @@ const messages  =   {
     "phone":"Please enter a valid phone number."
 };
 
+var actualSpanLang    =   "en";
+
 window.addEventListener('load', function() {
     //
 });
@@ -186,6 +188,52 @@ function mdetectDoors(e) {
     }
 }
 
+/* CHANGE LANGUAGE FORM */
+function mdetectLanguage(e) {
+    const value     =   e.value;
+    if(value != actualSpanLang) {
+        if(value == "en") {
+            xspan("lang", "Preferred language *");
+            xspan("service", "service *");
+            xspan("description", "WHICH GLASSES ARE BROKEN? *");
+            xspan("year", "year *");
+            xspan("vin", 'VIN (optional) <label for="vin_photo" class="text-primary underline">You can also take a photo</label>');
+            xspan("make", "make *");
+            xspan("model", "model *");
+            xspan("typeVehicle", "body style *");
+
+            xspan("name", "full name*");
+            xspan("email", "email *");
+            xspan("phone", "phone *");
+            xspan("zip", "zip *");
+
+            xspan("located", "We are located in Utah");
+            xspan("next", "Next");
+            xspan("send", "Send");
+        }
+        else {
+            xspan("lang", "idioma preferido *");
+            xspan("service", "servicio *");
+            xspan("description", "QUÉ VIDRIOS ESTÁN ROTOS? *");
+            xspan("year", "Año *");
+            xspan("vin", 'VIN (opcional) <label for="vin_photo" class="text-primary underline">También puedes tomar una foto</label>');
+            xspan("make", "marca *");
+            xspan("model", "modelo");
+            xspan("typeVehicle", "Estilo del vehículo *");
+            
+            xspan("name", "Nombre *");
+            xspan("email", "Correo *");
+            xspan("phone", "Teléfono *");
+            xspan("zip", "Código postal *");
+
+            xspan("located", "Nosotros estamos ubicados en Utah");
+            xspan("next", "Siguiente");
+            xspan("send", "Envíar");
+        }
+        actualSpanLang = value;
+    }
+}
+
 /* Stocks */
 function maddClass(element, clasx) {
     for(var i = 0; i < clasx.length; i++)
@@ -238,4 +286,8 @@ const validateEmail = (email) => {
         /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
     );
 };
-  
+
+function xspan(name, text) {
+    const span  =   document.getElementById("input_span_"+name);
+    span.innerHTML  =   text;
+}
