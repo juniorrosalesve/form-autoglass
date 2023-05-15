@@ -197,6 +197,10 @@
             }
         }
 
+        window.addEventListener("load", (event) => {
+            inIframe();
+        });
+
         function inIframe () {
             try {
                 const iframe    =   document.getElementById('hiddenOnIframe');
