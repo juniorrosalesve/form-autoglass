@@ -23,7 +23,7 @@
 
         <div class="relative w-full mx-auto flex justify-center items-center">
             <div class="relative p-5 w-[100%]">
-                <div <?php if(!isset($_GET['isFromWeb'])) { echo "style='display:none;'"; } ?>>
+                <div <?php if(isset($_GET['isFromWeb'])) { echo "style='display:none;'"; } ?>>
                     <center>
                     <img src="./logo.png" alt="logo">
                     </center>
