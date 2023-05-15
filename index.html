@@ -26,7 +26,7 @@
                 <center>
                     <img src="./logo.png" alt="logo">
                 </center>
-                <p class="text-center text-xs text-slate-800 font-normal">We aim to respond in less than 24 hours, (during our regular business days). Please provide us with all the required information.</p>
+                <p class="text-center text-xs text-slate-800 font-normal" id="input_span_respondtime">We aim to respond in less than 24 hours, (during our regular business days). Please provide us with all the required information.</p>
                 <div class="mt-8">
                     <!-- https://app.eautoglassmobile.com/new-request -->
                     <form action="https://app.eautoglassmobile.com/new-request" method="POST" enctype="multipart/form-data" id="mform_contact">
@@ -43,7 +43,7 @@
                                 </div>
                                 <div class="relative w-[100%]" id="mform_container_service" data-aos="fade-right">
                                     <select name="service" id="mservice" onchange="mdetectService(this)" class="block px-2.5 pb-5 pt-4 w-full text-sm text-gray-900 bg-transparent rounded-lg border-1 border-gray-300 appearance-none focus:outline-none focus:ring-0 focus:border-blue-600 peer">
-                                        <option selected value="0" disabled>Choose an option</option>
+                                        <option selected value="0" id="input_span_choose1" disabled>Choose an option</option>
                                         <!-- <option value="Windshield Replacement">Windshield Replacement</option> -->
                                         <option value="Windshield Replacement">Windshield Replacement</option>
                                         <option value="Door Glass Replacement">Door Glass Replacement</option>
@@ -98,7 +98,7 @@
                             <div id="mform_container_style_door" class="mt-2">
                                 <div class="relative w-[100%]" data-aos="fade-right" id="mform_container_style">
                                     <select name="typeVehicle" id="mvehicle_style" onchange="mdetectDoors(this)" class="block px-2.5 pb-5 pt-4 w-full text-sm text-gray-900 bg-transparent rounded-lg border-1 border-gray-300 appearance-none focus:outline-none focus:ring-0 focus:border-blue-600 peer">
-                                        <option selected disabled>Choose an option</option>
+                                        <option selected id="input_span_choose2" disabled>Choose an option</option>
                                         <!-- <option value="Van / MiniVan">Van / MiniVan</option> -->
                                         <option value="Sedan">Sedan</option>
                                         <option value="Wagon">Wagon</option>
@@ -116,7 +116,7 @@
                                     <select name="doorVehicle" id="mvehicle_door" class="block px-2.5 pb-5 pt-4 w-full text-sm text-gray-900 bg-transparent rounded-lg border-1 border-gray-300 appearance-none focus:outline-none focus:ring-0 focus:border-blue-600 peer">
                                         <!-- form.js -->
                                     </select>
-                                    <label for="3" class="absolute text-sm font-bold text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-0 top-0 z-10 origin-[0] px-2 peer-focus:px-2 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:-translate-y-0 peer-placeholder-shown:top-0 peer-focus:top-0 peer-focus:-translate-y-0 left-0">
+                                    <label for="3" id="input_span_doors" class="uppercase absolute text-sm font-bold text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-0 top-0 z-10 origin-[0] px-2 peer-focus:px-2 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:-translate-y-0 peer-placeholder-shown:top-0 peer-focus:top-0 peer-focus:-translate-y-0 left-0">
                                         DOOR *
                                     </label>
                                 </div>

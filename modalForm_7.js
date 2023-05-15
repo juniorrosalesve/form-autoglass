@@ -53,8 +53,11 @@ var misRockChip  =   false;
 var mstep        =   1;
 
 /* Extra */
-const moptionDoors1  =   '<option selected value="0" disabled>Choose an option</option><option value="2 doors">2 doors</option><option value="4 doors">4 doors</option>';
-const moptionDoors2  =   '<option selected value="0" disabled>Choose an option</option><option value="2 doors regular cab">2 doors regular cab</option><option value="2 doors extended cab">2 doors extended cab</option><option value="4 doors crew cab">4 doors crew cab</option><option value="4 doors extended crew cab">4 doors extended crew cab</option>';
+const moptionDoors1_EN  =   '<option selected value="0" disabled>Choose an option</option><option value="2 doors">2 doors</option><option value="4 doors">4 doors</option>';
+const moptionDoors2_EN  =   '<option selected value="0" disabled>Choose an option</option><option value="2 doors regular cab">2 doors regular cab</option><option value="2 doors extended cab">2 doors extended cab</option><option value="4 doors crew cab">4 doors crew cab</option><option value="4 doors extended crew cab">4 doors extended crew cab</option>';
+
+const moptionDoors1_ES  =   '<option selected value="0" disabled>Elige una opción</option><option value="2 doors">2 puertas</option><option value="4 doors">4 puertas</option>';
+const moptionDoors2_ES  =   '<option selected value="0" disabled>Elige una opción</option><option value="2 doors regular cab">Cabina regular de 2 puertas</option><option value="2 doors extended cab">Cabina extendida de 2 puertas</option><option value="4 doors crew cab">Cabina doble de 4 puertas</option><option value="4 doors extended crew cab">Cabina extendida de 4 puertas</option>';
 
 const messages  =   {
     "empty":"You must fill in all the fields.",
@@ -173,10 +176,18 @@ function mdetectDoors(e) {
     if(value == "Sedan" || value == "Wagon" || value == "Hatchaback" || value == "Pick Up") {
         //maddClass(mcontainerStyle, mclassInputLeft);
         mcontainerDoor.classList.remove('hidden');
-        if(value != "Pick Up")
-            minput1[5].innerHTML   =   moptionDoors1;
-        else 
-            minput1[5].innerHTML   =   moptionDoors2;
+        if(value != "Pick Up") {
+            if(actualSpanLang == "en") 
+                minput1[5].innerHTML    =   moptionDoors1_EN;
+            else
+                minput1[5].innerHTML    =   moptionDoors1_ES;
+        }
+        else {
+            if(actualSpanLang == "en") 
+                minput1[5].innerHTML   =   moptionDoors2_EN;
+            else
+                minput1[5].innerHTML   =   moptionDoors2_ES;
+        }
         mshowDoors = true;
     }
     else {
@@ -193,14 +204,19 @@ function mdetectLanguage(e) {
     const value     =   e.value;
     if(value != actualSpanLang) {
         if(value == "en") {
+            xspan("respondtime", "We aim to respond in less than 24 hours, (during our regular business days). Please provide us with all the required information.")
+
             xspan("lang", "Preferred language *");
             xspan("service", "service *");
+            xspan("choose1", "Choose an option");
             xspan("description", "WHICH GLASSES ARE BROKEN? *");
             xspan("year", "year *");
             xspan("vin", 'VIN (optional) <label for="vin_photo" class="text-primary underline">You can also take a photo</label>');
             xspan("make", "make *");
             xspan("model", "model *");
             xspan("typeVehicle", "body style *");
+            xspan("doors", "doors *");
+            xspan("choose2", "Choose an option");
 
             xspan("name", "full name*");
             xspan("email", "email *");
@@ -212,14 +228,19 @@ function mdetectLanguage(e) {
             xspan("send", "Send");
         }
         else {
+            xspan("respondtime", "Nuestro objetivo es responder en menos de 24 horas (durante nuestros días hábiles habituales). Por favor, proporciónenos toda la información requerida.")
+
             xspan("lang", "idioma preferido *");
             xspan("service", "servicio *");
+            xspan("choose1", "Elige una opción");
             xspan("description", "QUÉ VIDRIOS ESTÁN ROTOS? *");
             xspan("year", "Año *");
             xspan("vin", 'VIN (opcional) <label for="vin_photo" class="text-primary underline">También puedes tomar una foto</label>');
             xspan("make", "marca *");
-            xspan("model", "modelo");
+            xspan("model", "modelo *");
             xspan("typeVehicle", "Estilo del vehículo *");
+            xspan("doors", "puertas *");
+            xspan("choose2", "Elige una opción");
             
             xspan("name", "Nombre *");
             xspan("email", "Correo *");
