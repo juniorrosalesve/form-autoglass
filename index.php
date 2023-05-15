@@ -1,3 +1,7 @@
+<?php
+    $client_ip  =   $_SERVER['REMOTE_ADDR'];
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -23,10 +27,12 @@
 
         <div class="relative w-full mx-auto flex justify-center items-center">
             <div class="relative p-5 w-[100%]">
-                <center>
+                <?php if($client_ip != '127.0.0.1') { ?>
+                    <center>
                     <img src="./logo.png" alt="logo">
-                </center>
-                <p class="text-center text-xs text-slate-800 font-normal" id="input_span_respondtime">We aim to respond in less than 24 hours, (during our regular business days). Please provide us with all the required information.</p>
+                    </center>
+                    <p class="text-center text-xs text-slate-800 font-normal" id="input_span_respondtime">We aim to respond in less than 24 hours, (during our regular business days). Please provide us with all the required information.</p>
+                <?php } ?>
                 <div class="mt-8">
                     <!-- https://app.eautoglassmobile.com/new-request -->
                     <form action="https://app.eautoglassmobile.com/new-request" method="POST" enctype="multipart/form-data" id="mform_contact">
