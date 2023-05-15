@@ -39,7 +39,7 @@
                                         <option value="es">Spanish</option>
                                     </select>
                                     <label id="input_span_lang" class="uppercase absolute text-sm font-bold text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-0 top-0 z-10 origin-[0] px-2 peer-focus:px-2 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:-translate-y-0 peer-placeholder-shown:top-0 peer-focus:top-0 peer-focus:-translate-y-0 left-0">
-                                        Preferred language *
+                                        Language *
                                     </label>
                                 </div>
                                 <div class="relative w-[100%]" id="mform_container_service" data-aos="fade-right">
@@ -175,7 +175,7 @@
         </div>
         
     </div>
-    <script src="./modalForm_7.js"></script>
+    <script src="./modalForm_8.js"></script>
     <script>
         const vinPhoto  =   document.getElementById("vin_photo");
         const vinInput  =   document.getElementById("mvin");

@@ -206,7 +206,7 @@ function mdetectLanguage(e) {
         if(value == "en") {
             xspan("respondtime", "We aim to respond in less than 24 hours, (during our regular business days). Please provide us with all the required information.")
 
-            xspan("lang", "Preferred language *");
+            xspan("lang", "Language *");
             xspan("service", "service *");
             xspan("choose1", "Choose an option");
             xspan("description", "WHICH GLASSES ARE BROKEN? *");
@@ -230,7 +230,7 @@ function mdetectLanguage(e) {
         else {
             xspan("respondtime", "Nuestro objetivo es responder en menos de 24 horas (durante nuestros días hábiles habituales). Por favor, proporciónenos toda la información requerida.")
 
-            xspan("lang", "idioma preferido *");
+            xspan("lang", "idioma *");
             xspan("service", "servicio *");
             xspan("choose1", "Elige una opción");
             xspan("description", "QUÉ VIDRIOS ESTÁN ROTOS? *");
